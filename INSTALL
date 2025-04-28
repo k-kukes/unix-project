@@ -20,3 +20,14 @@ Configure SSH keys for secure access.
 
 Create a Git hook or scheduled task to automatically pull changes.
 
+
+Choices
+
+Things I would say is that 
+Nginx is easier to configure for static websites
+
+
+Comparing the two I woud say:
+- Apache has better built-in support for PHP
+- Debian is lighter than Ubuntu but Ubuntu has more package support
+
