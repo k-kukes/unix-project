@@ -1,0 +1,23 @@
+Ethan
+
+INSTALL Process
+
+# Install Instructions
+
+## Prerequisites
+
+- A VPS running Ubuntu or Debian.
+- SSH access with private/public key authentication.
+- Git installed on both local and server.
+
+
+## Installation Steps (to be updated)
+1. Clone the repository onto the VPS:
+   ```bash
+   git clone https://github.com/yourusername/your-repo.git
+Set up the web server (Nginx or Apache) to serve content from the repository directory.
+
+Configure SSH keys for secure access.
+
+Create a Git hook or scheduled task to automatically pull changes.
+
