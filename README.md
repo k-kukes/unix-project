@@ -11,16 +11,22 @@ We are using server as our platform choice.
 Demonstration Plan
 For the demonstration plan we will be using VPS.
 Requirements
--          Basic system setup and security: Using SSH Keys instead of passwords
--          Process or service management/scheduling: Using systemd to boot up the server and restart the server if it crashes.  	
--          Automated tasks using a script language: GitHub pushing and commit/ updating the web server
+-          Basic system setup and security: Rent a VPS, Update the System, create a new user, set up SSH Key Authentication, Disable Root SSH Login & Password Authentication, set up a Firewall, set time zone and sync time and Install Essential Packages.
+-          Process or service management/scheduling: Use systemd for service management, use cron for scheduled tasks,  	
+-          Automated tasks using a script language: Use bash scripts for automation, backing up the database, set up the systemd services.
 
 -      
 Major technical solutions compared:
-This project will compare different web servers (Nginx vs Apache) and Ubuntu and Debian and deployment automation methods to determine the most efficient and reliable setup. The goal is to evaluate these options based on ease of configuration
-Timeline
+This project will compare different web servers (Nginx vs Apache) and Ubuntu and Debian and deployment automation methods to determine the most efficient and reliable setup. 
+We will compare it based on ease of configuration, performance (how well it handles loading databases), security features, uptime and maybe more. 
 
-Week 1: Set up VPS and git repository and test the website using Nginx or Apache
+Week 1:  
+- Research Web Servers (Compare Nginx vs Apache) 
+- Research Operating Systems (Compare Ubuntu vs Debian or other OS) 
+- Research Deployment automation methods 
+- Research a VPS Provider 
+- Purchase a VPS (whichever was researched to be best) 
+- Create GitHub repository 
 
 
 
