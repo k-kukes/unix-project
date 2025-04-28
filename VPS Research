@@ -1,0 +1,16 @@
+# VPS
+VPS Choice: DigitalOcean
+
+DigitalOcean would be the best choice because...
+- It is very easy to create VPS, it takes 1-2 minutes
+- There are a ton of beginner tutorials which could guide us in our project for the upcoming weeks
+- Out of all the other VPS we looked like Vultr, Linode, etc.. DigitalOcean has the best dashboard to help developers like us
+  By Example:
+    - Easy to choose OS
+    - You can reboot, shut down and destroy the VPS with just 1 button click
+    - You can view CPU, memory and bandwith usage in real time
+    - Set up firewall rules, by example allowing only SSH or HTTP or HTTPS
+- It supports automated backups, so if our server crashes, gets hacked or we made a huge mistake we can restore from the backup
+- If we run out of storage, or server size, DigitalOcean provides help to it, but with a small additional cost
+
+Only bad thing about DigitalOcean is that it is the most pricy VPS out of all we have researched, but it's still pretty cheap.
