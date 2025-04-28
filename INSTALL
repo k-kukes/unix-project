@@ -13,8 +13,7 @@ INSTALL Process
 
 ## Installation Steps (to be updated)
 1. Clone the repository onto the VPS:
-   ```bash
-   git clone https://github.com/yourusername/your-repo.git
+
 Set up the web server (Nginx or Apache) to serve content from the repository directory.
 
 Configure SSH keys for secure access.
