@@ -1,0 +1,260 @@
+:root {
+    --kk-background-color: darkgrey;
+    --kk-background-body-color: lightgrey;
+    --kk-border-color: black; 
+    --kk-text-color: black;
+}
+
+.theme-switch{
+    border-radius: 20px;
+    padding: 3px;
+}
+
+:root[data-theme="dark"]{
+    --kk-background-color: black;
+    --kk-background-body-color: #121213;
+    --kk-border-color: white;
+    --kk-text-color: white;
+}
+
+nav li {
+    display: inline;
+}
+
+h1{
+    background-color: var(--kk-background-color);
+    color: var(--kk-text-color);
+    text-align: center;
+    font-family: 'Londrina Shadow', sans-serif;
+    text-shadow: 2px 2px 2px green;
+    font-size: 50px;
+}
+
+h2{
+    color: var(--kk-text-color);
+    text-align: center;
+    font-family: 'Sour Gummy', sans-serif;
+    text-shadow: 2px 2px 2px orange;
+    font-size: 40px;
+}
+
+body{
+    background-color: var(--kk-background-body-color);
+    color: var(--kk-text-color);
+    font-size: 20px;
+}
+
+article{
+    border-style: groove;
+}
+
+
+footer{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+nav {
+    font-size: 25px;
+}
+
+em {
+    font-family: fantasy;
+    color: var(--kk-text-color);
+}
+
+.section1{
+    border-style: dotted;
+    border-color: var(--kk-border-color);
+    padding-left: 10px;
+    margin: 20px;
+}
+
+.section2{
+    border-style: dotted;
+    border-color: var(--kk-border-color);
+    padding-left: 10px;
+    margin: 20px;
+}
+
+.playerName{
+    color: darkgoldenrod;
+    font-size: medium;
+    line-height: 25px;
+}
+
+#positionSection1{
+    font-family: 'Original Surfer', sans-serif;
+    line-height: 35px;
+}
+
+#positionSection1::first-line{
+    text-transform: capitalize;
+}
+
+#positionSection2{
+    font-family: 'Kavivanar', sans-serif;
+    line-height: 35px;
+}
+
+#positionSection2::first-letter{ /* My first letter is a small circle */
+    text-transform: capitalize;
+    font-size: larger;
+}
+
+#playerSection1{
+    font-family: 'Sour Gummy', sans-serif;
+    line-height: 25px;
+}
+
+#playerSection1::first-letter{
+    text-transform: capitalize;
+    font-size: larger;
+}
+
+#playerSection2{
+    font-family: 'Original Surfer', sans-serif;
+    line-height: 25px;
+}
+
+#playerSection1::selection{
+    background-color: yellow;
+}
+
+#playerSection2::selection{
+    background-color: yellow;
+}
+
+#positionSection1::selection{
+    background-color: yellow;
+}
+
+#positionSection2::selection{
+    background-color: yellow;
+}
+
+/* ASSIGNMENT 4 */
+
+#container table{
+    width: 100%;
+    border: 2px solid var(--kk-border-color);
+    border-collapse: collapse;
+}
+
+#container tbody td{
+    border: 1px solid grey;
+    padding: 8px;
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#container th {
+    background-color: steelblue;
+    font-family: cursive;
+    border: 1px solid black;
+}
+
+#container tbody tr:nth-child(even){
+    background-color: rgb(116, 169, 187);
+}
+
+#container tfoot td {
+    border: 3px solid black;
+    text-align: center;
+    background-color: midnightblue;
+    font-family: 'Times New Roman', Times, serif;
+    color: lightblue;
+    line-height: 25px;
+    font-size: 25px;
+}
+
+#container tbody tr:hover{
+    transition: 0.3s;
+    background-color: lightcyan;
+}
+
+#container caption{
+    border: 1px solid black;
+    background-color: midnightblue;
+    color: lightblue;
+}
+
+/* FORM */
+#formHeader{
+    width: 100%;
+    background-color: darkgray;
+    text-align: left;
+    font-weight: bold;
+}
+
+#formContainer legend{
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#formContainer label{
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#formContainer input{
+    height: 25px;
+}
+
+#formContainer select{
+    height: 25px;
+}
+
+.fullWidthFields{
+    width: 75%;
+}
+
+.twoRowFields{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+.twoRowFieldGroup{
+    display: flex;
+    gap: 50px;
+}
+
+.fieldBold{
+    font-weight: bold;
+}
+
+#contactFieldGroup{
+    display: flex;
+    gap: 30px;
+}
+
+.contactFields{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+#pkColor{
+    width: 145%;
+}
+
+#txtComments{
+    width: 75%;
+    height: 100px;
+}
+
+#resetButton{
+    background-color: rgb(255, 51, 51);
+    color: white;
+    font-weight: bold;
+    width: 55px;
+}
+
+#submitButton{
+    background-color: steelblue;
+    color: white;
+    font-weight: bold;
+    width: 75px;
+}

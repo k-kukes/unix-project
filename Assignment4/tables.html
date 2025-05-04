@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <p></p>
+            <p></p>
+            <p></p>
+            <ul>
+                <li><a href="home.html" id = "currentPage">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="lists.html">Lists</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tables.html">Tables</a></li>
+                <li><a href="form.html">Forms</a></li>
+                <li><a href="https://vaniercollege.omnivox.ca/">Vanier Omnivox</a></li>
+                <li>
+                    <button class="theme-switch" onclick="document.documentElement.setAttribute('data-theme', 'dark')">
+                        Dark 🌙
+                    </button>
+                </li>
+                <li>
+                    <button class="theme-switch" onclick="document.documentElement.setAttribute('data-theme', 'light')">
+                        Light 💡
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id = "container">
+        <table>
+            <caption>Soccer Players Information</caption>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Club</th>
+                    <th>Position</th>
+                    <th>Country</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">Cristiano Ronaldo</td>
+                    <td>Al Nassr</td>
+                    <td rowspan="2">Forward</td>
+                    <td rowspan="2">Portugal</td>
+                    <td rowspan="2">40</td>
+                </tr>
+                <tr>
+                    <td>Real Madrid</td>
+                </tr>
+                <tr>
+                    <td>Son Heung-min</td>
+                    <td>Tottenham</td>
+                    <td>Forward</td>
+                    <td>South Korea</td>
+                    <td>32</td>
+                    
+                </tr>                
+                <tr>
+                    <td>Kukes Kanthasamy</td>
+                    <td>DDO</td>
+                    <td>Winger</td>
+                    <td>Sri Lanka</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td>Neymar Jr</td>
+                    <td>Santos FC</td>
+                    <td>Winger</td>
+                    <td>Brazil</td>
+                    <td>33</td>
+                </tr>                
+                <tr>
+                    <td>Kaoru Mitoma</td>
+                    <td>Brighton</td>
+                    <td>Midfielder</td>
+                    <td>Japan</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>Lionel Messi</td>
+                    <td>Inter Miami</td>
+                    <td>Forward</td>
+                    <td>Argentina</td>
+                    <td>37</td>
+                </tr>
+
+                <tr>
+                    <td>Lamine Yamal</td>
+                    <td>Barcelona</td>
+                    <td>Forward</td>
+                    <td>Spain</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td>Kylian Mbappe</td>
+                    <td>Real Madrid</td>
+                    <td>Forward</td>
+                    <td>France</td>
+                    <td>26</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">Favorite Players</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

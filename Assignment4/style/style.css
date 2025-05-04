@@ -1,0 +1,135 @@
+:root{
+    --kk-border-radius-size: 30px;
+    background-color: palegoldenrod;
+}
+
+/* Assignment2 */
+
+nav ul li{
+    display: inline;
+    margin-right:20px;
+}
+
+nav{
+    width: 1000px;
+    height: 75px;
+    margin-left: 400px;
+    margin-bottom: 50px;
+    border: 3px solid steelblue;
+    text-align: center;
+    box-shadow: 0 2px 2px lightblue;
+    background-color: lightsteelblue;
+}
+
+figure{
+    margin-left: 150px;
+    height: 500px;
+    width: 400px;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: var(--kk-border-radius-size);
+    background-color: lightblue;
+    text-align: center;
+}
+
+figure img{
+    transition: 0.5s ease-in-out;
+    display: block;
+    border-radius: var(--kk-border-radius-size);
+    border: 1px solid black;
+    box-shadow: 0 5px 5px black;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-top: 30px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    width: 300px;
+    height: 300px;
+}
+
+figure img:hover{
+    transform: scale(1.2);
+}
+
+figure figcaption{
+    background-color: lightgreen;
+    height: 50px;
+    border: 2px solid black;
+    padding-top: 25px;
+}
+
+footer{
+    background-color: lightblue;
+    border: 2px solid black;
+    height:50px;
+    width: 1500px;
+    font-size: 24px;
+    padding: 25px;
+    text-align: center;
+    margin-left: 175px;
+}
+
+a{
+    padding: 5px 10px 10px 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: lightblue;
+    font-size: 26px;
+}
+
+a:hover{
+    background-color: palegoldenrod;
+    text-decoration: none;
+    border-bottom: 5px solid lightgreen;
+}
+
+a:visited{
+    border-left-color: rebeccapurple;
+}
+
+a:active{
+    background-color: lightgreen;
+}
+
+a:focus{
+    border: 2px solid lightgreen;
+    outline: 2px dashed green;
+}
+
+#currentPage{
+    background-color: lightcoral;
+}
+
+/* Assignment3 */
+
+#clubList {
+    border: 2px solid black;
+}
+
+#clubList li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px dashed black;
+    list-style: upper-roman;
+}
+
+#clubList li:hover{
+    background-color: lightgreen;
+}
+
+#playerList{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px dotted black;
+}
+
+#playerList li{
+    border: 2px double black;
+    font-size: 20px;
+    padding: 20px;
+    line-height: 2px;
+}
+
+#playerList li:hover{
+    background: url(../images/field.jpg);
+}
