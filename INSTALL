@@ -36,5 +36,158 @@ May 4, My output (Ethan) log to make the git push working
 
 
 
+Provisioned VPS from hosting provider (DigitalOcean).
+
+Connected to the VPS using default root credentials:
+
+bash
+Copy
+Edit
+ssh root@your_vps_ip
+Created user accounts for each group member:
+
+bash
+Copy
+Edit
+adduser username
+usermod -aG sudo username
+Installed essential packages:
+
+
+bash
+Copy
+Edit
+apt update && apt upgrade
+apt install curl wget git ufw
+Configured SSH access for users:
+
+
+
+Generated SSH keys locally using ssh-keygen
+
+Added public keys to each user's ~/.ssh/authorized_keys
+
+
+ Security Measures: (just used default)
+Set timezone using:
+
+bash
+Copy
+Edit
+timedatectl set-timezone 
+Enabled UFW firewall:
+
+
+bash
+Copy
+Edit
+ufw allow OpenSSH
+ufw allow 80
+ufw allow 443
+ufw enable
+Disabled root login by editing /etc/ssh/sshd_config:
+
+nginx
+Copy
+Edit
+PermitRootLogin no
+PasswordAuthentication no
+Then restarted SSH:
+
+bash
+Copy
+Edit
+systemctl restart ssh
+
+
+Week 2 –  Web Server + Git Setup
+Date: May 4
+Time Spent: 2 hours
+
+Activities:
+Installed Nginx as web server:
+
+bash
+Copy
+Edit
+apt install nginx
+systemctl start nginx
+systemctl enable nginx
+Confirmed it was running via http://your_vps_ip
+
+
+
+Set up the project folder:
+
+bash
+Copy
+Edit
+mkdir -p /var/www/project-name
+chown -R ethan:ethan /var/www/Assignment4
+Installed Git and cloned the GitHub repo:
+
+
+
+Then enabled and restarted Nginx:
+
+bash
+Copy
+Edit
+ln -s /etc/nginx/sites-available/Assignment4 /etc/nginx/sites-enabled/
+nginx -t
+systemctl restart nginx
+
+
+
+
+
+ Date: May 5, 2025
+ Time Spent: ~3 hours
+
+
+
+Activities:
+
+On local machine, created and pushed test HTML file:
+
+bash
+Copy
+Edit
+echo "<!-- test deploy -->" >> home.html
+git add .
+git commit -m "Test auto deployment"
+git push origin main
+Installed Git on local Windows machine to fix:
+
+kotlin
+Copy
+Edit
+'git' is not recognized as an internal or external command
+→ Downloaded and installed Git for Windows, verified with git --version
+
+
+
+
+Set up SSH key for Git + VPS:
+
+bash
+Copy
+Edit
+ssh-keygen -t rsa -b 4096
+ssh-copy-id ethan@ourvipid
+Ensured proper permissions:
+
+
+
+bash
+Copy
+Edit
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+
+
+Discussed setting up Git hooks or GitHub Webhooks for auto-deployment for later
+
+
 
 
