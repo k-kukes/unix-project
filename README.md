@@ -29,5 +29,7 @@ Week 1:
 - Create GitHub repository 
 
 
+SSH Key (Ethan)
 
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINycUt9EO81sktntefum4Tsu00czAFoU2LeAM9IDMJw+ ethan@your-email.com
 
