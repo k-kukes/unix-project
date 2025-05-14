@@ -2,6 +2,7 @@ CHOICES – UNIX VPS GitHub Deployment Project
 Project Goal
 
 
+(Ethan)
 To install a VPS with a website and automatically update its content each time a commit is pushed onto a connected GitHub repository. The deployment is based on a deployment script, cron jobs, and Nginx.
 
 1. Choosing a Web Server: Nginx vs. Apache
