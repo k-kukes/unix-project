@@ -1,0 +1,134 @@
+CHOICES – UNIX VPS GitHub Deployment Project
+Project Goal
+
+
+To install a VPS with a website and automatically update its content each time a commit is pushed onto a connected GitHub repository. The deployment is based on a deployment script, cron jobs, and Nginx.
+
+1. Choosing a Web Server: Nginx vs. Apache
+Options:
+
+Apache: Familiar and widely supported
+
+Nginx: Lighter, faster for static files, and better suited for modern-day deployment
+
+Decision:
+I chose Nginx because of its improved efficiency in delivering static content. It's also highly commonly used with VPS setups.
+
+
+
+2. Integration of GitHub and VPS
+Options:
+
+
+Manual pulls from GitHub when updates are needed
+
+Automate with Git hooks (harder setup)
+
+Automate with cron and script
+
+
+
+Decision
+I opted to deploy automatically using a cron job and a shell deployment script of mine. The approach is simple, effective, and maintains the site updating round-the-clock without using webhook support or manual adjustment.
+
+3. Deploying Deployment Script
+Task: Create a shell script that:
+
+Changes into the website directory
+
+Downloads the recent GitHub updates
+
+Reloads the Nginx server
+
+
+
+Troubles Faced:
+
+
+Initially, I had forgotten the correct file path and had unknowingly added /html
+
+
+I received permission denied messages alot of the times since I had not run the script file
+
+
+Solution:
+I fixed the file path, removed the typo, and used chmod +x to run the script. After correction, the script ran.
+
+4. Scheduling a Script using Cron
+Options:
+
+Manual execution
+
+Cron job with hourly refresh
+
+Cron job every minute (for quick testing)
+
+
+Decision:
+I used a cron job that runs every minute for testing. This enabled me to easily verify that changes pushed to GitHub were being picked up and deployed on time.
+
+bash
+Copy
+Edit
+* * * * * /path/to/deployment-script.sh
+Later, I would reduce the timing (e.g., every 5 or 10 minutes) to avoid excessive load on the server.
+
+
+
+
+5. Debugging File Path and Permissions
+Issues:
+
+"File not found" and "permission denied" errors
+
+Git could not pull because wrong path
+
+Nginx would not replicate changes until properly restarted
+
+
+
+
+Releases (to debug):
+
+Double-checked path with pwd
+
+Removed typos like /html and /war
+
+Used chmod for execution permission of the script
+
+Used sudo systemctl restart nginx to implement site changes
+
+
+
+6. Testing Site Updates via GitHub
+To ensure whether the system was working:
+
+Applied a small text modification in home.html and pushed to GitHub
+
+Waited for the cron job to catch up with the update
+
+Refreshed the site to see changes implemented
+
+Examples
+
+
+
+Renamed website title to "UNIX PROJECT" — confirmed update
+
+Renamed header text — To confirmed
+
+
+7. Conclusion
+This was mostly trial-and-error, critical thinking in the context of which commands to use and for what purpose, and debugging process layer by layer (Git, shell scripting, permissions, and Nginx). Finally, the configuration offers an easy way to deploy web changes by pushing to GitHub.
+
+To test if the system was working:
+
+I made a small text change in home.html and committed to GitHub
+
+Waited for the cron job to pull the update
+
+Refreshed the site to see changes reflected
+
+
+
+
