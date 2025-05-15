@@ -20,6 +20,14 @@ Ensured the script was executed by the right user
 
 - Had issues creating database due to root login being disabled, was planning on using SQLite 
 
+To confirm everything worked, 
+
+I Changed a line in home.html names in footer
+
+Committed & pushed to GitHub
+
+Waited and saw the changes reflected on the live website 
+
 
 (Ethan)
 To install a VPS with a website and automatically update its content each time a commit is pushed onto a connected GitHub repository. The deployment is based on a deployment script, cron jobs, and Nginx.
