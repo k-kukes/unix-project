@@ -28,6 +28,23 @@ Week 1:
 - Purchase a VPS (whichever was researched to be best) 
 - Create GitHub repository 
 
+Week 2:
+- Install Web Server (whichever was researched to be best)
+- Set up SSH Keys for each of us
+- Set up Account for each of us
+- Set up Firewall
+- Disable root login
+- Set timezone and time
+- Install essential packages + updating
+- Set up the OS in VPS
+- Add database
+Week 3:
+- Configure deployment scripts to automatically update web servers using GitHub
+- Set up cron jobs to automate deployments on the VPS
+- Test the automated deployments by using the git commands
+
+
+
 
 SSH Key (Ethan)
 
