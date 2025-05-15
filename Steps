@@ -1,0 +1,118 @@
+Here are the steps to do in order to reach our product.
+
+LEGEND
+** = Use Digital Ocean Console
+$$ = use local computer
+() = general context, you need to put your own info inside the bracket
+
+1. Purchase a VPS on DigitalOcean
+
+2. Add users fo each user
+   ** Run sudo adduser user
+
+3. Set up SSH access keys
+  You will need to run ssh keygen on your local computer to get your ssh key
+  Once you have done that run
+  $$ type %userprofile%\.ssh\id_(rsa).pub (rsa can be found in the randomart image generated, it's at the top line, first numbers after the letters
+  After doing this, you will find your ssh key, copy it and save it somewhere
+
+  ** run ls home/(your user).  If you do not see a folder called .ssh add one by running sudo mkdir -p /home/(user)/.ssh
+  ** Give yourself permissions by running sudo chmod 700 /home/(user)/.ssh
+  Now you will have to add your public key inside a authorized_keys file in the /home/(user)/.ssh path directory. To do that:
+  ** sudo nano /home/(user)/.ssh/authorized_keys
+  Once it is opened, simply paste or type in your public key aka SSH Key then CTRL+O -> Enter -> CTRL+, which is to save your changes
+  Now you will have to give permissions to that file
+  ** sudo chmod 600 /home/(user)/.ssh/authorized_keys
+
+4. Test SSH Key login on local computer
+  $$ (user)@(server-ip)  -- server-ip is provided by digital ocean, is the address to reach your nginx site
+  If it worked, then perfect you are good to continue
+  If not, you will have to troubleshoot, common error is incorrectly typing your SSH Key in the authorized_keys file
+
+5. Set up Firewall
+  $$ sudo ufw allow OpenSSH
+  $$ sudo ufw enable
+  To test if your firewall was set up run:
+  $$ sufo ufw status
+  If you see status: active then you are good to continue
+  Note: Firewall can be set up inside digital ocean website. There is a section for adding firewall protection which can be very handy.
+
+6. Disable root login
+  $$ sudo nano /etc/ssh/sshd_config
+  Inside this file, locate #PermitRootLogin yes
+  Uncomment that part and change "yes" to "no"
+  That line would look like this: PermitRootLogin yes
+  Once done, save it and then, run:
+  $$ sudo systemctl restart ssh
+  It will ensure that the effect is taking place
+
+7. Set timezone
+  To get a list of time zones to use run:
+  $$ timedatectl list-timezones
+  You will see a list of timezones, to find a specific one you can use "/" and then city or country by example /Montreal
+  Once you found one, take note of it, so for montreal it would be America/Montreal
+  Click q to exit this list
+  In order to see your current timezone, run:
+  $$ timedatectl
+  in the "Time zone:" section you will see the timezone, generally you will see UTC
+  In order to set a specific new time zone run:
+  $$ sudo timedatectl set-timezone (timezone by example America/Montreal)
+  You can run again "timedatectl" to see if the change was done
+
+8. Update & Install necessary packages
+  - sudo apt update
+  - sudo apt upgrade -y
+  This will install the necessary packages and update the ones you currently have to their newer version if they have one
+
+9. Configure Nginx file
+  $$ sudo nano /etc/nginx/sites-available/default
+  in the line which has "root", put the path to your website folder, could look like "/var/www/(project name)/(website folder)
+  in the line with "index", add the default html file, by example home.html or index.html, in other words your main page
+  Save & Exit
+  run on your browser http://(server-ip), if you see the website then that is perfect
+  if you do not see your website, you have an error somewhere, error 404. 
+  You could have done a typo somewhere in your path folder in the nginx/available-sites/default file
+
+10. Create deployment script
+  Create a folder for your scripts
+  $$ mkdir -p /home/(user)/scripts   "You can change "script" to a different name if you prefer"
+  $$ cd/home/(user)/scripts
+  $$ nano deploy.sh
+  Inside deploy.sh you have to write:
+    cd (path to your website folder, the one you put in nginx site)
+    git pull origin main
+    sudo systemctl restart nginx
+  Save & Exit
+  return to your original directory so cd /home/(user)
+
+11. Make your deployment script executable
+  $$ chmod +x /home/(user)/scripts/deploy.sh  Note: scripts & deploy.sh can be named differently, depends on what you previously entered
+
+12. Setting up the cron job
+  $$ crontab-e
+  You will see a select option, easiest will say "1. /bin/nano <---- easiest"
+  Enter 1 when prompted
+  && crontab -l
+  at the end of the file, type * * * * * /home/(user)/scripts/deploy.sh
+
+13. Testing the cron job
+  $$ bash /home/(user)/scripts/deploy.sh
+  There are possible errors
+    1. No such file or directory (Your directory is wrong, you are not putting the correct directory to your website folder)
+    2. fatal: detected dubious ownership in repository (run git config --global --add safe.directory /var/www/(project name)
+    3. Permission denied (run sudo chown -R (user):(user) /var/www/(project-name)
+  If you don't see error then you are most likely good, to test open your VPS on a browser http://(server-ip)
+
+14. Testing GitHub changes on the site
+  AT THIS POINT, YOU SHOULD BE ABLE TO SEE YOUR HOME PAGE WHEN YOU TYPE http://(server-ip) IN YOUR BROWSER
+  IF NOT, YOU HAVE AN ERROR SOMEWHERE!
+
+  To test, you can simply go on your github repository, go to the html file you want to change something on
+  Change something and then commit
+
+  After that you have commmited, wait 1 minute. After waiting for a minute or two, refresh your page and see if the changes worked
+  If you see changes, perfect you are good to go, you have completed the project
+  If not, you might have a typo error in your cron job or deployment script
+    
+
+          
